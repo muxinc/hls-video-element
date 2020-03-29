@@ -1,6 +1,6 @@
 {
   "name": "hls-video-element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses HLS.js.",
   "type": "module",
   "main": "dist/hls-video-element.js",
@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/muxinc/hls-video-element.git"
   },
-  "publishConfig":{
-  	"registry": "https://registry.npmjs.org"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "HLS",
