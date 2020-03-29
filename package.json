@@ -17,6 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/muxinc/hls-video-element.git"
   },
+  "publishConfig":{
+  	"registry": "https://registry.npmjs.org"
+  },
   "keywords": [
     "HLS",
     "video",
