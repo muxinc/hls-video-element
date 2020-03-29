@@ -1,0 +1,36 @@
+{
+  "name": "hls-video-element",
+  "version": "0.0.1",
+  "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses HLS.js.",
+  "type": "module",
+  "main": "dist/hls-video-element.js",
+  "files": [
+    "./dist/*",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup --config",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muxinc/hls-video-element.git"
+  },
+  "keywords": [
+    "HLS",
+    "video",
+    "player"
+  ],
+  "author": "@muxinc",
+  "license": "MIT",
+  "dependencies": {
+    "custom-video-element": "^0.0.1",
+    "hls.js": "^0.13.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "rollup": "^2.2.0",
+    "rollup-plugin-babel-minify": "^10.0.0"
+  }
+}
