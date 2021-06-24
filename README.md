@@ -9,7 +9,7 @@ The element API matches the HTML5 `<video>` tag, so it can be easily swapped wit
 ```html
 <html>
 <head>
-  <script type="module" src="https://unpkg.com/hls-video-element"></script>
+  <script type="module" src="https://unpkg.com/hls-video-element@0.0"></script>
 </head>
 <body>
 
@@ -31,7 +31,7 @@ Note the `type="module"`, that's important.
 
 ```html
 <head>
-  <script type="module" src="https://unpkg.com/hls-video-element"></script>
+  <script type="module" src="https://unpkg.com/hls-video-element@0.0"></script>
 </head>
 ```
 
