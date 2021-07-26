@@ -50,3 +50,21 @@ Include in your app javascript (e.g. src/App.js)
 import 'hls-video-element';
 ```
 This will register the custom elements with the browser so they can be used as HTML.
+
+## Configuring HLS.js
+Under the hood we are using [HLS.js](https://hls-js.netlify.app/demo/) to parse and play back the HLS manifest. You can pass HLS.js config parameters by setting the `hlsjsConfig` property on the elememnt object. For example:
+
+```html
+<hls-video
+  controls
+  src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8">
+  <track label="thumbnails" id="customTrack" default kind="metadata" src="https://image.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/storyboard.vtt"></track>
+</hls-video>
+
+<script>
+  const video = document.querySelector('hls-video');
+  video.hlsjsConfig = { debug: true };
+</script>
+```
+
+[See the config parameters.](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning)
