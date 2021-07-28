@@ -57,13 +57,19 @@ Under the hood we are using [HLS.js](https://hls-js.netlify.app/demo/) to parse 
 ```html
 <hls-video
   controls
-  src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8">
-  <track label="thumbnails" id="customTrack" default kind="metadata" src="https://image.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/storyboard.vtt"></track>
+  src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8"
+>
 </hls-video>
 
 <script>
-  const video = document.querySelector('hls-video');
-  video.hlsjsConfig = { debug: true };
+  customElements.whenDefined('hls-video').then(()=>{
+    const hlsVideo = document.querySelector('hls-video');
+    // Update the config object as desired
+    hlsVideo.hlsjsConfig = {
+      debug: true
+    };
+    hlsVideo.load();
+  });
 </script>
 ```
 

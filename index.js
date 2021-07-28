@@ -24,13 +24,15 @@ class HLSVideoElement extends CustomVideoElement {
   }
 
   load() {
+    if (this._hlsjs) this._hlsjs.destroy();
+
     if (Hls.isSupported()) {
       let config = Object.assign({
         // Kind of like preload metadata, but causes spinner.
         // autoStartLoad: false,
       }, this.hlsjsConfig);
 
-      var hls = new Hls(config);
+      const hls = this._hlsjs = new Hls(config);
 
       hls.loadSource(this.src);
       hls.attachMedia(this.nativeEl);
