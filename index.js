@@ -24,16 +24,23 @@ class HLSVideoElement extends CustomVideoElement {
   }
 
   load() {
+    if (this._hlsjs) this._hlsjs.destroy();
+
     if (Hls.isSupported()) {
-      var hls = new Hls({
+      let config = Object.assign({
         // Kind of like preload metadata, but causes spinner.
         // autoStartLoad: false,
-      });
+      }, this.hlsjsConfig);
+
+      const hls = this._hlsjs = new Hls(config);
 
       hls.loadSource(this.src);
       hls.attachMedia(this.nativeEl);
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       this.nativeEl.src = this.src;
+      this.nativeEl.load();
+    } else {
+      console.error('<hls-video>: HLS is not supported.');
     }
   }
 
