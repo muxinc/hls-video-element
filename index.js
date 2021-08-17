@@ -32,7 +32,7 @@ class HLSVideoElement extends CustomVideoElement {
 
       this.hls = new Hls({ autoStartLoad: true });
       this.hls.attachMedia(this.nativeEl);
-      this.hls.on(Hls.Events.MEDIA_ATTACHED, () => this.hls.loadSource(this.src));      
+      this.hls.loadSource(this.src);    
       this.hls.on(Hls.Events.FRAG_LOADED, () => {
         if(laodedFragmentCount === 0) {
           this.hls.stopLoad();
