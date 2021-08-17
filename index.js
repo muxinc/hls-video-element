@@ -23,15 +23,22 @@ class HLSVideoElement extends CustomVideoElement {
     }
   }
 
+  // To be compatible with chrome-media and not load continously at start fragments,
+  // we startload and listen for the first fragment to be loaded
+  // then we stop load
   load() {
     if (Hls.isSupported()) {
-      this.hls = new Hls({ autoStartLoad: false });
+      let laodedFragmentCount = 0
 
-      // this.hls.loadSource(this.src);
-      // this.hls.attachMedia(this.nativeEl);
+      this.hls = new Hls({ autoStartLoad: true });
       this.hls.attachMedia(this.nativeEl);
-      this.hls.on(Hls.Events.MEDIA_ATTACHED, () => this.hls.loadSource(this.src));
-
+      this.hls.on(Hls.Events.MEDIA_ATTACHED, () => this.hls.loadSource(this.src));      
+      this.hls.on(Hls.Events.FRAG_LOADED, () => {
+        if(laodedFragmentCount === 0) {
+          this.hls.stopLoad();
+          laodedFragmentCount++;
+        };
+      });
     } else if (this.nativeEl.canPlayType('application/vnd.apple.mpegurl')) {
       this.nativeEl.src = this.src;
     }
