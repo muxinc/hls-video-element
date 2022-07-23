@@ -1,42 +1,65 @@
 {
-  "name": "hls-video-element",
-  "version": "0.0.3",
-  "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses HLS.js.",
+  "name": "@luwes/hls-video-element",
+  "version": "0.1.1",
+  "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses hls.js.",
   "type": "module",
   "main": "dist/hls-video-element.js",
   "files": [
-    "./dist/*",
-    "README.md"
+    "src",
+    "dist"
   ],
+  "repository": "luwes/hls-video-element",
+  "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/luwes/hls-video-element#readme",
+  "bugs": {
+    "url": "https://github.com/luwes/hls-video-element/issues"
+  },
   "scripts": {
-    "build": "rm -rf dist && rollup --config",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-patch": "yarn run build && np patch --no-tests"
+    "pretest": "npm run build",
+    "test": "web-test-runner **/*test.js --node-resolve",
+    "dev": "esbuild src/hls-video-element.js --bundle --servedir=. --outdir=dist",
+    "build": "esbuild src/hls-video-element.js --bundle --format=esm --sourcemap --minify --outdir=dist",
+    "prepublishOnly": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/muxinc/hls-video-element.git"
+  "dependencies": {
+    "super-media-element": "0.3.0",
+    "hls.js": "1.1.5"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+  "devDependencies": {
+    "@open-wc/testing": "^3.0.3",
+    "@web/test-runner": "^0.13.26",
+    "esbuild": "^0.14.25",
+    "eslint": "^8.10.0",
+    "prettier": "^2.5.1"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": true
+  },
+  "eslintConfig": {
+    "globals": {
+      "globalThis": "writable"
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "mocha": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    }
   },
   "keywords": [
     "HLS",
     "video",
-    "player"
-  ],
-  "author": "@muxinc",
-  "license": "MIT",
-  "dependencies": {
-    "custom-video-element": "^0.0.2",
-    "hls.js": "^0.13.2"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "np": "^6.2.0",
-    "rollup": "^2.2.0",
-    "rollup-plugin-babel-minify": "^10.0.0",
-    "rollup-plugin-terser": "^5.3.0"
-  }
+    "player",
+    "web component",
+    "custom element"
+  ]
 }

@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <title>HLS Video Element</title>
+    <title>&lt;hls-video&gt;</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <style>
+      body {
+        min-height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      hls-video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #000;
+      }
+    </style>
     <script type="module" src="./dist/hls-video-element.js"></script>
   </head>
   <body>
+    <h1>&lt;hls-video&gt;</h1>
+    <br />
 
     <hls-video
       controls
-      src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8">
+      src="https://stream.mux.com/r4rOE02cc95tbe3I00302nlrHfT023Q3IedFJW029w018KxZA.m3u8"
+    >
       <track label="thumbnails" id="customTrack" default kind="metadata" src="https://image.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/storyboard.vtt"></track>
     </hls-video>
-
-    <p><a href="https://github.com/muxinc/hls-video-element">github.com/muxinc/hls-video-element</a></p>
   </body>
 </html>
