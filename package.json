@@ -1,6 +1,6 @@
 {
-  "name": "@luwes/hls-video-element",
-  "version": "0.1.1",
+  "name": "hls-video-element",
+  "version": "0.0.3",
   "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses hls.js.",
   "type": "module",
   "main": "dist/hls-video-element.js",
@@ -8,12 +8,12 @@
     "src",
     "dist"
   ],
-  "repository": "luwes/hls-video-element",
-  "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
+  "repository": "muxinc/hls-video-element",
+  "author": "@muxinc",
   "license": "MIT",
-  "homepage": "https://github.com/luwes/hls-video-element#readme",
+  "homepage": "https://github.com/muxinc/hls-video-element#readme",
   "bugs": {
-    "url": "https://github.com/luwes/hls-video-element/issues"
+    "url": "https://github.com/muxinc/hls-video-element/issues"
   },
   "scripts": {
     "pretest": "npm run build",

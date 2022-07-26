@@ -26,7 +26,7 @@ release() {
 
 canary() {
   # get last published version from NPM without alpha / beta, remove -SHA hash
-  LAST_VERSION=$(npm view @luwes/hls-video-element versions --json |
+  LAST_VERSION=$(npm view hls-video-element versions --json |
     jq -r '. - map(select(contains("alpha") or contains("beta"))) | last' |
     sed -r 's/-[a-z0-9]{7}$//g')
   PRE_VERSION=$(npx semver $LAST_VERSION -i prerelease --preid canary)
