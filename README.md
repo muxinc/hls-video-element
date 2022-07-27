@@ -10,7 +10,7 @@ One of the goals was to have `<hls-video>` seamlessly integrate with [Media Chro
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://unpkg.com/hls-video-element@0"></script>
+<script type="module" src="https://unpkg.com/hls-video-element@0.0"></script>
 <hls-video controls src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8"></hls-video>
 ```
 
@@ -26,7 +26,7 @@ Note the `type="module"`, that's important.
 
 ```html
 <head>
-  <script type="module" src="https://unpkg.com/hls-video-element@0"></script>
+  <script type="module" src="https://unpkg.com/hls-video-element@0.0"></script>
 </head>
 ```
 
