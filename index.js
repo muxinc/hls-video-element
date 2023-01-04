@@ -28,6 +28,10 @@ class HLSVideoElement extends CustomVideoElement {
       var hls = new Hls({
         // Kind of like preload metadata, but causes spinner.
         // autoStartLoad: false,
+
+        // Mimic the media element with an Infinity duration
+        // for live streams
+        liveDurationInfinity: true
       });
 
       hls.loadSource(this.src);
