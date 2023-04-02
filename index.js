@@ -36,7 +36,7 @@ class HLSVideoElement extends CustomVideoElement {
 
       hls.loadSource(this.src);
       hls.attachMedia(this.nativeEl);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    } else if (this.nativeEl.canPlayType('application/vnd.apple.mpegurl')) {
       this.nativeEl.src = this.src;
     }
   }
