@@ -1,7 +1,7 @@
 // Web Components: Extending Native Elements, A working example
 
-import CustomVideoElement from 'custom-video-element';
-import Hls from 'hls.js';
+import CustomVideoElement from "custom-video-element";
+import Hls from "hls.js";
 
 class HLSVideoElement extends CustomVideoElement {
   constructor() {
@@ -12,14 +12,14 @@ class HLSVideoElement extends CustomVideoElement {
     // Use the attribute value as the source of truth.
     // No need to store it in two places.
     // This avoids needing a to read the attribute initially and update the src.
-    return this.getAttribute('src');
+    return this.getAttribute("src");
   }
 
   set src(val) {
     // If being set by attributeChangedCallback,
     // dont' cause an infinite loop
     if (val !== this.src) {
-      this.setAttribute('src', val);
+      this.setAttribute("src", val);
     }
   }
 
@@ -31,12 +31,21 @@ class HLSVideoElement extends CustomVideoElement {
 
         // Mimic the media element with an Infinity duration
         // for live streams
-        liveDurationInfinity: true
+        liveDurationInfinity: true,
+      });
+
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        if (this.hasAttribute("muted")) {
+          this.nativeEl.muted = true;
+        }
+        if (this.hasAttribute("autoplay")) {
+          this.nativeEl.play();
+        }
       });
 
       hls.loadSource(this.src);
       hls.attachMedia(this.nativeEl);
-    } else if (this.nativeEl.canPlayType('application/vnd.apple.mpegurl')) {
+    } else if (this.nativeEl.canPlayType("application/vnd.apple.mpegurl")) {
       this.nativeEl.src = this.src;
     }
   }
@@ -64,8 +73,8 @@ class HLSVideoElement extends CustomVideoElement {
   }
 }
 
-if (!window.customElements.get('hls-video')) {
-  window.customElements.define('hls-video', HLSVideoElement);
+if (!window.customElements.get("hls-video")) {
+  window.customElements.define("hls-video", HLSVideoElement);
   window.HLSVideoElement = HLSVideoElement;
 }
 
