@@ -28,7 +28,7 @@
   "author": "@muxinc",
   "license": "MIT",
   "dependencies": {
-    "custom-video-element": "^0.0.2",
+    "custom-media-element": "^0.2.0",
     "hls.js": "^1.4.9"
   },
   "devDependencies": {

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <title>HLS Video Element</title>
-    <script type="module" src="./dist/hls-video-element.js"></script>
-  </head>
-  <body>
 
-    <h2>On-demand</h2>
-    <hls-video
-      controls
-      src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8">
-      <track label="thumbnails" id="customTrack" default kind="metadata" src="https://image.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/storyboard.vtt"></track>
-    </hls-video>
+<head>
+  <title>HLS Video Element</title>
+  <script type="module" src="./dist/hls-video-element.js"></script>
+</head>
 
-    <h2>Live</h2>
-    <hls-video
-      controls
-      src="http://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM">
-    </hls-video>
+<body>
 
-    <p><a href="https://github.com/muxinc/hls-video-element">github.com/muxinc/hls-video-element</a></p>
-  </body>
+  <h2>On-demand</h2>
+  <hls-video autoplay muted controls src="https://stream.mux.com/A3VXy02VoUinw01pwyomEO3bHnG4P32xzV7u1j1FSzjNg.m3u8">
+    <track label="thumbnails" id="customTrack" default kind="metadata"
+      src="https://image.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/storyboard.vtt">
+    </track>
+  </hls-video>
+
+  <h2>Live</h2>
+  <hls-video autoplay muted controls src="http://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM">
+  </hls-video>
+
+  <p><a href="https://github.com/muxinc/hls-video-element">github.com/muxinc/hls-video-element</a></p>
+</body>
+
 </html>
