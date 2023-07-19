@@ -1,6 +1,6 @@
 // Web Components: Extending Native Elements, A working example
 
-import CustomVideoElement from 'custom-video-element';
+import { CustomVideoElement } from 'custom-media-element';
 import Hls from 'hls.js';
 
 class HLSVideoElement extends CustomVideoElement {
