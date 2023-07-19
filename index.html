@@ -2,18 +2,38 @@
 <html lang="en" dir="ltr">
   <head>
     <title>HLS Video Element</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+    <style>
+      hls-video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #000;
+      }
+    </style>
+
     <script type="module" src="./dist/hls-video-element.js"></script>
   </head>
   <body>
 
     <h2>On-demand</h2>
     <hls-video
+      id="video1"
       controls
       src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8"
       crossorigin
     >
       <track label="thumbnails" id="customTrack" default kind="metadata" src="https://image.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/storyboard.vtt"></track>
     </hls-video>
+    <br>
+
+    <button id="loadbtn">Load new clip</button>
+    <script type="module">
+      loadbtn.onclick = () => {
+        video1.src = 'https://stream.mux.com/1EFcsL5JET00t00mBv01t00xt00T4QeNQtsXx2cKY6DLd7RM.m3u8';
+      };
+    </script>
 
     <h2>Live</h2>
     <hls-video
