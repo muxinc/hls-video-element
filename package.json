@@ -11,14 +11,11 @@
   "scripts": {
     "build": "rm -rf dist && rollup --config",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-patch": "yarn run build && np patch --no-tests"
+    "publish-release": "./scripts/publish.sh"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/muxinc/hls-video-element.git"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "HLS",
@@ -35,7 +32,6 @@
     "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
-    "np": "^8.0.4",
     "rollup": "^3.26.2"
   }
 }
