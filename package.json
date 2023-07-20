@@ -1,6 +1,6 @@
 {
   "name": "hls-video-element",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses HLS.js.",
   "type": "module",
   "main": "hls-video-element.js",
