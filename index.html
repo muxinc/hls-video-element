@@ -13,7 +13,15 @@
       }
     </style>
 
-    <script type="module" src="./dist/hls-video-element.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "custom-media-element": "https://cdn.jsdelivr.net/npm/custom-media-element@0.2",
+          "hls.js/": "https://cdn.jsdelivr.net/npm/hls.js@1.4/"
+        }
+      }
+    </script>
+    <script type="module" src="./hls-video-element.js"></script>
   </head>
   <body>
 

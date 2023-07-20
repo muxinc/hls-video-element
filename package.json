@@ -3,35 +3,30 @@
   "version": "0.1.0",
   "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses HLS.js.",
   "type": "module",
-  "main": "dist/hls-video-element.js",
-  "files": [
-    "./dist/*",
-    "README.md"
-  ],
+  "main": "hls-video-element.js",
+  "files": [],
   "scripts": {
-    "build": "rm -rf dist && rollup --config",
+    "lint": "npx eslint *.js -c ./node_modules/wet-run/.eslintrc.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish-release": "./scripts/publish.sh"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/muxinc/hls-video-element.git"
+  "repository": "muxinc/hls-video-element",
+  "author": "@muxinc",
+  "license": "MIT",
+  "homepage": "https://github.com/muxinc/hls-video-element#readme",
+  "bugs": {
+    "url": "https://github.com/muxinc/hls-video-element/issues"
+  },
+  "dependencies": {
+    "custom-media-element": "^0.2.0",
+    "hls.js": "^1.4.9"
   },
   "keywords": [
     "HLS",
     "video",
     "player"
   ],
-  "author": "@muxinc",
-  "license": "MIT",
-  "dependencies": {
-    "custom-media-element": "^0.2.0",
-    "hls.js": "^1.4.9"
-  },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.3",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "@rollup/plugin-terser": "^0.4.3",
-    "rollup": "^3.26.2"
+    "wet-run": "^0.2.0"
   }
 }
