@@ -7,8 +7,8 @@
   "files": [],
   "scripts": {
     "lint": "npx eslint *.js -c ./node_modules/wet-run/.eslintrc.json",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-release": "./scripts/publish.sh"
+    "test": "wet run",
+    "dev": "wet serve"
   },
   "repository": "muxinc/hls-video-element",
   "author": "@muxinc",

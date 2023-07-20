@@ -21,12 +21,15 @@ class HLSVideoElement extends CustomVideoElement {
     }
   }
 
-  load() {
+  async load() {
     this.#destroy();
 
     if (!this.src) {
       return;
     }
+
+    // Wait 1 tick to allow other attributes to be set.
+    await Promise.resolve();
 
     if (Hls.isSupported()) {
 
