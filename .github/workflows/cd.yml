@@ -36,9 +36,4 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - run: yarn --frozen-lockfile
       - run: yarn lint
-      - run: npm run publish-release -- ${{ inputs.version_type }}
-        if: ${{ inputs.version_type != 'conventional' }}
-        shell: bash
-      - run: npm run publish-release
-        if: ${{ inputs.version_type == 'conventional' }}
-        shell: bash
+      - run: npx wet-run release ${{ inputs.version_type }} --changelog --github-release
