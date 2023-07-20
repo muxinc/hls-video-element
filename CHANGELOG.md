@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/muxinc/hls-video-element/compare/v0.1.0...v0.2.0) (2023-07-20)
+
+
+### Features
+
+* remove unnecessary build ([#29](https://github.com/muxinc/hls-video-element/issues/29)) ([cd3e18e](https://github.com/muxinc/hls-video-element/commit/cd3e18e6bb0c48fdbd4cb97359d9f9a47d35fbfb))
+
+
+
 # [0.1.0](https://github.com/muxinc/hls-video-element/compare/v0.0.5...v0.1.0) (2023-07-20)
 
 
