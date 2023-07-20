@@ -1,3 +1,12 @@
+# [0.1.0](https://github.com/muxinc/hls-video-element/compare/v0.0.5...v0.1.0) (2023-07-20)
+
+
+### Features
+
+* add preload ([#28](https://github.com/muxinc/hls-video-element/issues/28)) ([d1078a6](https://github.com/muxinc/hls-video-element/commit/d1078a63023bfd512ceefc62474e2f3f181d7c21))
+
+
+
 ## [0.0.5](https://github.com/muxinc/hls-video-element/compare/v0.0.4...v0.0.5) (2023-07-19)
 
 
