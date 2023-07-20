@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/muxinc/hls-video-element/compare/v0.2.0...v0.2.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* fix race bug and add tests ([#32](https://github.com/muxinc/hls-video-element/issues/32)) ([0fcd2f8](https://github.com/muxinc/hls-video-element/commit/0fcd2f848465fc8bde99dd9a6f3a560988f5d016))
+
+
+
 # [0.2.0](https://github.com/muxinc/hls-video-element/compare/v0.1.0...v0.2.0) (2023-07-20)
 
 
