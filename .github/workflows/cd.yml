@@ -36,4 +36,5 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - run: yarn --frozen-lockfile
       - run: yarn lint
+      - run: yarn test
       - run: npx wet-run release ${{ inputs.version_type }} --changelog --github-release
