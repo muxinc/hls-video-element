@@ -1,52 +1,54 @@
 # `<hls-video>`
 
-A custom element (web component) for playing HTTP Live Streaming (HLS) videos.
+[![Version](https://img.shields.io/npm/v/hls-video-element?style=flat-square)](https://www.npmjs.com/package/hls-video-element) 
+[![Badge size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/hls-video-element/+esm?compression=gzip&label=gzip&style=flat-square)](https://cdn.jsdelivr.net/npm/hls-video-element/+esm)
 
-The element API matches the HTML5 `<video>` tag, so it can be easily swapped with other media, and be compatible with other UI components that work with the video tag.
+A [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) 
+for [hls.js](https://github.com/video-dev/hls.js) with an API that matches the 
+[`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) API.
+
+- 🏄‍♂️ Compatible [`HTMLMediaElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement) API
+- 🕺 Seamlessly integrates with [Media Chrome](https://github.com/muxinc/media-chrome)
 
 ## Example
 
+<!-- prettier-ignore -->
 ```html
-<html>
-<head>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.2/+esm"></script>
-</head>
-<body>
-
-  <hls-video controls src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe.m3u8"></hls-video>
-
-</body>
-</html>
+<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.2/+esm"></script>
+<hls-video controls src="https://stream.mux.com/r4rOE02cc95tbe3I00302nlrHfT023Q3IedFJW029w018KxZA.m3u8"></hls-video>
 ```
 
-## Installing
+## Install
 
-`<hls-video>` is packaged as a javascript module (es6) only, which is supported by all evergreen browsers and Node v12+.
-
-### Loading into your HTML using `<script>`
-
-Note the `type="module"`, that's important.
-
-> Modules are always loaded asynchronously by the browser, so it's ok to load them in the head :thumbsup:, and best for registering web components quickly.
-
-```html
-<head>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.2/+esm"></script>
-</head>
-```
-
-### Adding to your app via `npm`
+First install the NPM package:
 
 ```bash
-npm install hls-video-element --save
-```
-Or yarn
-```bash
-yarn add hls-video-element
+npm install hls-video-element
 ```
 
-Include in your app javascript (e.g. src/App.js)
+Import in your app javascript (e.g. src/App.js):
+
 ```js
 import 'hls-video-element';
 ```
+
+Optionally, you can load the script directly from a CDN using [jsDelivr](https://www.jsdelivr.com/):
+
+<!-- prettier-ignore -->
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.2/+esm"></script>
+```
+
 This will register the custom elements with the browser so they can be used as HTML.
+
+## Related
+
+- [Media Chrome](https://github.com/muxinc/media-chrome) Your media player's dancing suit. 🕺
+- [`<youtube-video>`](https://github.com/muxinc/youtube-video-element) A custom element for the YouTube player.
+- [`<vimeo-video>`](https://github.com/luwes/vimeo-video-element) A custom element for the Vimeo player.
+- [`<videojs-video>`](https://github.com/luwes/videojs-video-element) A custom element for Video.js.
+- [`<wistia-video>`](https://github.com/luwes/wistia-video-element) A custom element for the Wistia player.
+- [`<jwplayer-video>`](https://github.com/luwes/jwplayer-video-element) A custom element for the JW player.
+- [`castable-video`](https://github.com/muxinc/castable-video) Cast your video element to the big screen with ease!
+- [`<mux-player>`](https://github.com/muxinc/elements/tree/main/packages/mux-player) The official Mux-flavored video player custom element.
+- [`<mux-video>`](https://github.com/muxinc/elements/tree/main/packages/mux-video) A Mux-flavored HTML5 video element w/ hls.js and Mux data builtin.
