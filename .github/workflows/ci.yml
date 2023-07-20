@@ -3,10 +3,10 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: yarn --frozen-lockfile
-      - run: yarn build
+      - run: yarn lint

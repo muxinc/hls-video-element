@@ -1,5 +1,5 @@
 import { CustomVideoElement } from 'custom-media-element';
-import Hls from 'hls.js';
+import Hls from 'hls.js/dist/hls.mjs';
 
 class HLSVideoElement extends CustomVideoElement {
 
