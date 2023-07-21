@@ -5,7 +5,9 @@
   "type": "module",
   "main": "hls-video-element.js",
   "types": "hls-video-element.d.ts",
-  "files": [],
+  "files": [
+    "hls-video-element.d.ts"
+  ],
   "scripts": {
     "lint": "npx eslint *.js -c ./node_modules/wet-run/.eslintrc.json",
     "test": "wet run",
