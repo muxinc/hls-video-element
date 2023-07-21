@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/muxinc/hls-video-element/compare/v0.2.1...v0.3.0) (2023-07-21)
+
+
+### Features
+
+* Reexport Hls.js ([#35](https://github.com/muxinc/hls-video-element/issues/35)) ([43a98a8](https://github.com/muxinc/hls-video-element/commit/43a98a840282277471b83d4ccb70452b9781f2d3))
+
+
+
 ## [0.2.1](https://github.com/muxinc/hls-video-element/compare/v0.2.0...v0.2.1) (2023-07-20)
 
 
