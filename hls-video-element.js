@@ -1,7 +1,8 @@
 import { CustomVideoElement } from 'custom-media-element';
+import { MediaTracksMixin } from 'media-tracks';
 import Hls from 'hls.js/dist/hls.mjs';
 
-class HLSVideoElement extends CustomVideoElement {
+class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
 
   attributeChangedCallback(attrName, oldValue, newValue) {
     if (attrName !== 'src') {
@@ -77,6 +78,72 @@ class HLSVideoElement extends CustomVideoElement {
       }
 
       this.api.attachMedia(this.nativeEl);
+
+      // Set up renditions
+
+      // Create a map to save the unique id's we create for each level and rendition.
+      // hls.js uses the levels array index primarily but we'll use the id to have a
+      // 1 to 1 relation from rendition to level.
+      const levelIdMap = new WeakMap();
+
+      this.api.on(Hls.Events.MANIFEST_PARSED, (event, data) => {
+        removeAllVideoTracks();
+
+        const videoTrack = this.addVideoTrack('main');
+        videoTrack.selected = true;
+
+        for (const [id, level] of data.levels.entries()) {
+          const videoRendition = videoTrack.addRendition(
+            level.url[0],
+            level.width,
+            level.height,
+            level.videoCodec,
+            level.bitrate
+          );
+
+          // The returned levels all have an id of `0`, save the id in a WeakMap.
+          levelIdMap.set(level, `${id}`);
+          videoRendition.id = `${id}`;
+        }
+      });
+
+      // Fired when a level is removed after calling `removeLevel()`
+      this.api.on(Hls.Events.LEVELS_UPDATED, (event, data) => {
+        const videoTrack = this.videoTracks[this.videoTracks.selectedIndex ?? 0];
+        if (!videoTrack) return;
+
+        const levelIds = data.levels.map((l) => levelIdMap.get(l));
+
+        for (const rendition of this.videoRenditions) {
+          if (rendition.id && !levelIds.includes(rendition.id)) {
+            videoTrack.removeRendition(rendition);
+          }
+        }
+      });
+
+      // hls.js doesn't support enabling multiple renditions.
+      //
+      // 1. if all renditions are enabled it's auto selection.
+      // 2. if 1 of the renditions is disabled we assume a selection was made
+      //    and lock it to the first rendition that is enabled.
+      const switchRendition = ({ target: renditions }) => {
+        const level = renditions.selectedIndex;
+        if (level != this.api.nextLevel) {
+          this.api.nextLevel = level;
+        }
+      };
+
+      this.videoRenditions.addEventListener('change', switchRendition);
+
+      const removeAllVideoTracks = () => {
+        for (const videoTrack of this.videoTracks) {
+          this.removeVideoTrack(videoTrack);
+        }
+      };
+
+      this.api.once(Hls.Events.DESTROYING, () => {
+        removeAllVideoTracks();
+      });
 
     } else if (this.nativeEl.canPlayType('application/vnd.apple.mpegurl')) {
 
