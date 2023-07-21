@@ -28,8 +28,7 @@ class HLSVideoElement extends CustomVideoElement {
       return;
     }
 
-    // Wait 1 tick to allow other attributes to be set.
-    await Promise.resolve();
+  
 
     if (Hls.isSupported()) {
 
@@ -38,8 +37,10 @@ class HLSVideoElement extends CustomVideoElement {
         liveDurationInfinity: true
       });
 
-      // Set up preload
+      // Wait 1 tick to allow other attributes to be set.
+      await Promise.resolve();
 
+      // Set up preload
       switch (this.nativeEl.preload) {
         case 'none': {
           // when preload is none, load the source on first play
