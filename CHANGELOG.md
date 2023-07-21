@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/muxinc/hls-video-element/compare/v0.3.0...v0.3.1) (2023-07-21)
+
+
+### Bug Fixes
+
+* add types to files array ([#38](https://github.com/muxinc/hls-video-element/issues/38)) ([5755dd0](https://github.com/muxinc/hls-video-element/commit/5755dd041e8bfd4ed2fceb81ee9406a92fc5850c))
+
+
+
 # [0.3.0](https://github.com/muxinc/hls-video-element/compare/v0.2.1...v0.3.0) (2023-07-21)
 
 
