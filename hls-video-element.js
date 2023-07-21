@@ -91,3 +91,5 @@ if (globalThis.customElements && !globalThis.customElements.get('hls-video')) {
 }
 
 export default HLSVideoElement;
+
+export { Hls }
