@@ -28,8 +28,6 @@ class HLSVideoElement extends CustomVideoElement {
       return;
     }
 
-  
-
     if (Hls.isSupported()) {
 
       this.api = new Hls({
@@ -92,3 +90,5 @@ if (globalThis.customElements && !globalThis.customElements.get('hls-video')) {
 }
 
 export default HLSVideoElement;
+
+export { Hls };

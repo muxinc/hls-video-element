@@ -30,3 +30,5 @@ declare class HLSVideoElement extends CustomVideoElement {
 }
 
 export default HLSVideoElement;
+
+export { Hls };
