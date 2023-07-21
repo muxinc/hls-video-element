@@ -4,6 +4,7 @@
   "description": "Custom element (web component) for playing video using the HTTP Live Streaming (HLS) format. Uses HLS.js.",
   "type": "module",
   "main": "hls-video-element.js",
+  "types": "hls-video-element.d.ts",
   "files": [],
   "scripts": {
     "lint": "npx eslint *.js -c ./node_modules/wet-run/.eslintrc.json",
