@@ -26,7 +26,7 @@ declare class HLSVideoElement extends CustomVideoElement {
   /**
    * Unloads the HLS.js instance and detaches it from the video element.
    */
-  private destroy(): void;
+  #destroy(): void;
 }
 
 export default HLSVideoElement;
