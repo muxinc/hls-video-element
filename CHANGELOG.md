@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/muxinc/hls-video-element/compare/v0.3.1...v0.4.0) (2023-07-22)
+
+
+### Features
+
+* add renditions API and example ([#36](https://github.com/muxinc/hls-video-element/issues/36)) ([37c4ea0](https://github.com/muxinc/hls-video-element/commit/37c4ea0b78d037ea487e1f434f48f0c9064a4424))
+
+
+
 ## [0.3.1](https://github.com/muxinc/hls-video-element/compare/v0.3.0...v0.3.1) (2023-07-21)
 
 
