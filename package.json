@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "custom-media-element": "^0.2.0",
-    "hls.js": "^1.4.9"
+    "hls.js": "^1.4.9",
+    "media-tracks": "^0.2.1"
   },
   "keywords": [
     "HLS",
