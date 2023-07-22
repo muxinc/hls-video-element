@@ -14,7 +14,7 @@ for [hls.js](https://github.com/video-dev/hls.js) with an API that matches the
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.2/+esm"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.4/+esm"></script>
 <hls-video controls src="https://stream.mux.com/r4rOE02cc95tbe3I00302nlrHfT023Q3IedFJW029w018KxZA.m3u8"></hls-video>
 ```
 
@@ -36,7 +36,7 @@ Optionally, you can load the script directly from a CDN using [jsDelivr](https:/
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.2/+esm"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@0.4/+esm"></script>
 ```
 
 This will register the custom elements with the browser so they can be used as HTML.
