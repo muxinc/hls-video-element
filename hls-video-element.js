@@ -29,6 +29,7 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
       return;
     }
 
+    // Prefer using hls.js over native if it is supported.
     if (Hls.isSupported()) {
 
       this.api = new Hls({
@@ -79,7 +80,7 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
 
       this.api.attachMedia(this.nativeEl);
 
-      // Set up renditions
+      // Set up tracks & renditions
 
       // Create a map to save the unique id's we create for each level and rendition.
       // hls.js uses the levels array index primarily but we'll use the id to have a
@@ -87,7 +88,7 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
       const levelIdMap = new WeakMap();
 
       this.api.on(Hls.Events.MANIFEST_PARSED, (event, data) => {
-        removeAllVideoTracks();
+        removeAllMediaTracks();
 
         const videoTrack = this.addVideoTrack('main');
         videoTrack.selected = true;
@@ -105,6 +106,21 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
           levelIdMap.set(level, `${id}`);
           videoRendition.id = `${id}`;
         }
+
+        for (let [id, a] of data.audioTracks.entries()) {
+          // hls.js doesn't return a `kind` property for audio tracks yet.
+          const kind = a.default ? 'main' : 'alternative';
+          const audioTrack = this.addAudioTrack(kind, a.name, a.lang);
+          audioTrack.id = `${id}`;
+
+          if (a.default) {
+            audioTrack.enabled = true;
+          }
+        }
+      });
+
+      this.audioTracks.addEventListener('change', () => {
+        this.api.audioTrack = [...this.audioTracks].find(t => t.enabled).id;
       });
 
       // Fired when a level is removed after calling `removeLevel()`
@@ -135,17 +151,25 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
 
       this.videoRenditions.addEventListener('change', switchRendition);
 
-      const removeAllVideoTracks = () => {
+      const removeAllMediaTracks = () => {
         for (const videoTrack of this.videoTracks) {
           this.removeVideoTrack(videoTrack);
         }
+        for (const audioTrack of this.audioTracks) {
+          this.removeAudioTrack(audioTrack);
+        }
       };
 
-      this.api.once(Hls.Events.DESTROYING, () => {
-        removeAllVideoTracks();
-      });
+      this.api.once(Hls.Events.DESTROYING, removeAllMediaTracks);
 
-    } else if (this.nativeEl.canPlayType('application/vnd.apple.mpegurl')) {
+      return;
+    }
+
+    // Wait 1 tick so this.nativeEl is sure to be defined.
+    await Promise.resolve();
+
+    // Use native HLS. e.g. iOS Safari.
+    if (this.nativeEl.canPlayType('application/vnd.apple.mpegurl')) {
 
       this.nativeEl.src = this.src;
     }
