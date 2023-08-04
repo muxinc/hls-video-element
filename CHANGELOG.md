@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/muxinc/hls-video-element/compare/v0.4.0...v0.5.0) (2023-08-04)
+
+
+### Features
+
+* add audio tracks support ([#39](https://github.com/muxinc/hls-video-element/issues/39)) ([199253d](https://github.com/muxinc/hls-video-element/commit/199253dafaca9a63b99c6fb892526e9a100d70ac))
+
+
+
 # [0.4.0](https://github.com/muxinc/hls-video-element/compare/v0.3.1...v0.4.0) (2023-07-22)
 
 
