@@ -12,10 +12,10 @@ hls.js@^1.4.9:
   resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-1.4.9.tgz#8b23b029cafda4b64ef1c5acd4f65c4f245103d7"
   integrity sha512-i2BuNh7C7sd+wpW1V9p+P37KKCWNc6Ph/3BiPr+8nfJ7eZdtQQvSQUn2QwKU+7Fvc7b5BpS/lM6RJ3LUf+XbWg==
 
-media-tracks@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/media-tracks/-/media-tracks-0.2.1.tgz#60bac586ca23f2d443da8e094e0ed13e943600e9"
-  integrity sha512-Q+NQmQ6CmUlEcmkomYvU1G8UfUPvZW59fsGOJFcQJ8AZTO2UkGCs2ycjPqZb1+K2PyJije5b/NKedVUVI6yPaA==
+media-tracks@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/media-tracks/-/media-tracks-0.2.2.tgz#af95183cebba9d8692227ec91d8544076475da9d"
+  integrity sha512-ldceHC8agUxPT8BGX1JUEqP7hKLOLoqz3dB4/06QxJLH4UlfZoBOcM+oCt/bJ+mcUPDCNtWQu7VsYei1Nci8Dw==
 
 playwright-core@^1.31.1:
   version "1.36.1"
