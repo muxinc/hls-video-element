@@ -1,3 +1,12 @@
+## [0.5.1](https://github.com/muxinc/hls-video-element/compare/v0.5.0...v0.5.1) (2023-08-07)
+
+
+### Bug Fixes
+
+* upgrade media-tracks ([0641075](https://github.com/muxinc/hls-video-element/commit/06410757ac8a4eb3aaa92ef7951a067789e65c57))
+
+
+
 # [0.5.0](https://github.com/muxinc/hls-video-element/compare/v0.4.0...v0.5.0) (2023-08-04)
 
 
