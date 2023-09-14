@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-custom-media-element@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/custom-media-element/-/custom-media-element-0.2.0.tgz#bc25ee504d126c8fca9bfde81c8abc26f4d46e99"
-  integrity sha512-N++UzR1COFip4DrtZkS99VDCcQvVCJmbqI7qaxZtHWKdAv/RUYIOnmJbP/HHk2un0PjvtFNKHfNLiFsd9BmnMQ==
+custom-media-element@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/custom-media-element/-/custom-media-element-1.0.0.tgz#6b04f62cb7187268ab2622251a52f7539de912eb"
+  integrity sha512-wVruLAFUOtJuTaemcXPGlweGLI5efwUoctUQzMqSJRZdtetNQzrfy3CPF3daOJoJnq2OLY9Byknrv1+hruW+cw==
 
 hls.js@^1.4.9:
   version "1.4.9"
