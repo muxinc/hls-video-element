@@ -142,14 +142,37 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
       // 1. if all renditions are enabled it's auto selection.
       // 2. if 1 of the renditions is disabled we assume a selection was made
       //    and lock it to the first rendition that is enabled.
-      const switchRendition = ({ target: renditions }) => {
-        const level = renditions.selectedIndex;
+      const switchRendition = (event) => {
+        const level = event.target.selectedIndex;
         if (level != this.api.nextLevel) {
-          this.api.nextLevel = level;
+          smoothSwitch(level);
         }
       };
 
-      this.videoRenditions.addEventListener('change', switchRendition);
+      // Workaround for issue changing renditions on an alternative audio track.
+      // https://github.com/video-dev/hls.js/issues/5749#issuecomment-1684629437
+      const smoothSwitch = (levelIndex) => {
+        const currentTime = this.currentTime;
+        let flushedFwdBuffer = false;
+
+        const callback = (event, data) => {
+          flushedFwdBuffer ||= !Number.isFinite(data.endOffset);
+        };
+
+        this.api.on(Hls.Events.BUFFER_FLUSHING, callback);
+        this.api.nextLevel = levelIndex;
+        this.api.off(Hls.Events.BUFFER_FLUSHING, callback);
+
+        if (!flushedFwdBuffer) {
+          this.api.trigger(Hls.Events.BUFFER_FLUSHING, {
+            startOffset: currentTime + 10,
+            endOffset: Infinity,
+            type: 'video',
+          });
+        }
+      };
+
+      this.videoRenditions?.addEventListener('change', switchRendition);
 
       const removeAllMediaTracks = () => {
         for (const videoTrack of this.videoTracks) {
