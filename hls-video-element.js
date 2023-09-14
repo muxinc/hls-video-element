@@ -120,7 +120,10 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
       });
 
       this.audioTracks.addEventListener('change', () => {
-        this.api.audioTrack = [...this.audioTracks].find(t => t.enabled).id;
+        const audioTrackId = [...this.audioTracks].find(t => t.enabled)?.id;
+        if (audioTrackId != null && audioTrackId != this.api.audioTrack) {
+          this.api.audioTrack = +audioTrackId;
+        }
       });
 
       // Fired when a level is removed after calling `removeLevel()`
