@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/muxinc/hls-video-element/compare/v0.5.1...v1.0.0) (2023-09-14)
+
+
+### Features
+
+* v1 preparations ([#40](https://github.com/muxinc/hls-video-element/issues/40)) ([3ed83f2](https://github.com/muxinc/hls-video-element/commit/3ed83f2b2a3cb9b68efee8f1d89c98978af212ab)), closes [/github.com/muxinc/elements/pull/759/files#diff-c685396a5424b33db29b48c7784a8c29ad62660d2a952995977558ee462157b2R39-R41](https://github.com//github.com/muxinc/elements/pull/759/files/issues/diff-c685396a5424b33db29b48c7784a8c29ad62660d2a952995977558ee462157b2R39-R41)
+
+
+
 ## [0.5.1](https://github.com/muxinc/hls-video-element/compare/v0.5.0...v0.5.1) (2023-08-07)
 
 
