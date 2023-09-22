@@ -120,9 +120,11 @@ class HLSVideoElement extends MediaTracksMixin(CustomVideoElement) {
       });
 
       this.audioTracks.addEventListener('change', () => {
-        const audioTrackId = [...this.audioTracks].find(t => t.enabled)?.id;
-        if (audioTrackId != null && audioTrackId != this.api.audioTrack) {
-          this.api.audioTrack = +audioTrackId;
+        // Cast to number, hls.js uses numeric id's.
+        const audioTrackId = +[...this.audioTracks].find(t => t.enabled)?.id;
+        const availableIds = this.api.audioTracks.map(t => t.id);
+        if (audioTrackId != this.api.audioTrack && availableIds.includes(audioTrackId)) {
+          this.api.audioTrack = audioTrackId;
         }
       });
 
