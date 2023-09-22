@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/muxinc/hls-video-element/compare/v1.0.0...v1.0.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* audiotracks ([#41](https://github.com/muxinc/hls-video-element/issues/41)) ([20e3213](https://github.com/muxinc/hls-video-element/commit/20e321378261702b232764592a27d1206cffe334))
+
+
+
 # [1.0.0](https://github.com/muxinc/hls-video-element/compare/v0.5.1...v1.0.0) (2023-09-14)
 
 
