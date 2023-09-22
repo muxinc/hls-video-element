@@ -22,15 +22,15 @@
   },
   "dependencies": {
     "custom-media-element": "^1.0.0",
-    "hls.js": "^1.4.9",
-    "media-tracks": "^0.2.3"
+    "hls.js": "^1.4.12",
+    "media-tracks": "^0.2.4"
+  },
+  "devDependencies": {
+    "wet-run": "^0.2.0"
   },
   "keywords": [
     "HLS",
     "video",
     "player"
-  ],
-  "devDependencies": {
-    "wet-run": "^0.2.0"
-  }
+  ]
 }
