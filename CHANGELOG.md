@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/muxinc/hls-video-element/compare/v1.0.1...v1.1.0) (2023-12-03)
+
+
+### Bug Fixes
+
+* add Hls mixin + upgrade custom-media-element + update tooling ([#43](https://github.com/muxinc/hls-video-element/issues/43)) ([1a79419](https://github.com/muxinc/hls-video-element/commit/1a79419af046fa4f5a2949245c60297789df9925))
+
+
+
 ## [1.0.1](https://github.com/muxinc/hls-video-element/compare/v1.0.0...v1.0.1) (2023-09-22)
 
 
