@@ -8,13 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: yarn --frozen-lockfile
-      - run: yarn lint
+      - run: npm ci
+      - run: npm run lint
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: yarn --frozen-lockfile
-      - run: yarn test
+      - run: npm ci
+      - run: npm test

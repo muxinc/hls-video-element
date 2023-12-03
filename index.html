@@ -7,12 +7,18 @@
   body {
     text-align: center;
   }
-  media-controller,
-  hls-video {
+  media-controller {
     display: block;
-    width: 100%;
     aspect-ratio: 16 / 9;
-    background: #000;
+    background: transparent;
+  }
+  hls-video[slot] {
+    /* Fix Safari aspect-ratio overflow glitch */
+    height: fit-content;
+  }
+  hls-video:not([slot]) {
+    aspect-ratio: 16 / 9;
+    width: 100%;
   }
   nav {
     display: flex;

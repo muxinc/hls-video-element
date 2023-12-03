@@ -6,7 +6,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      version_type:
+      version:
         type: choice
         required: true
         description: Version
@@ -15,11 +15,23 @@ on:
         - patch
         - minor
         - major
+        - prerelease
+      prerelease:
+        type: choice
+        required: false
+        description: Pre-release
+        options:
+        -
+        - canary
+        - beta
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
+    permissions:
+      contents: write
+      id-token: write
 
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -34,7 +46,7 @@ jobs:
           # this line is required for the setup-node action to be able to run the npm publish below.
           registry-url: 'https://registry.npmjs.org'
       - uses: fregante/setup-git-user@v1
-      - run: yarn --frozen-lockfile
-      - run: yarn lint
-      - run: yarn test
-      - run: npx wet-run release ${{ inputs.version_type }} --changelog --github-release
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npx --yes wet-run@0.9.2 release ${{ inputs.version }} --prerelease "${{ inputs.prerelease }}" --provenance --changelog --github-release
