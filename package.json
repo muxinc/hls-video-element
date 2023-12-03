@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint": "npx eslint *.js -c ./node_modules/wet-run/.eslintrc.json",
-    "test": "wet run",
+    "test": "wet run --coverage",
     "dev": "wet serve"
   },
   "repository": "muxinc/hls-video-element",
