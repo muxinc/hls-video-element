@@ -92,8 +92,13 @@ const HlsVideoMixin = (superclass) => {
         this.api.on(Hls.Events.MANIFEST_PARSED, (event, data) => {
           removeAllMediaTracks();
 
-          const videoTrack = this.addVideoTrack('main');
-          videoTrack.selected = true;
+          let videoTrack = this.videoTracks.getTrackById('main');
+
+          if (!videoTrack) {
+            videoTrack = this.addVideoTrack('main');
+            videoTrack.id = 'main';
+            videoTrack.selected = true;
+          }
 
           for (const [id, level] of data.levels.entries()) {
             const videoRendition = videoTrack.addRendition(
