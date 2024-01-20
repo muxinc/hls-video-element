@@ -21,12 +21,12 @@
     "url": "https://github.com/muxinc/hls-video-element/issues"
   },
   "dependencies": {
-    "custom-media-element": "^1.1.0",
-    "hls.js": "^1.4.12",
-    "media-tracks": "^0.2.4"
+    "custom-media-element": "^1.2.2",
+    "hls.js": "^1.5.1",
+    "media-tracks": "^0.3.0"
   },
   "devDependencies": {
-    "wet-run": "^1.0.0"
+    "wet-run": "^1.0.3"
   },
   "keywords": [
     "HLS",
