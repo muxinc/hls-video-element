@@ -1,3 +1,12 @@
+## [1.1.3](https://github.com/muxinc/hls-video-element/compare/v1.1.2...v1.1.3) (2024-02-07)
+
+
+### Bug Fixes
+
+* upgrade deps ([#49](https://github.com/muxinc/hls-video-element/issues/49)) ([6e0c905](https://github.com/muxinc/hls-video-element/commit/6e0c9051b5b41242983f7a2861f739d6c97ece57))
+
+
+
 ## [1.1.2](https://github.com/muxinc/hls-video-element/compare/v1.1.1...v1.1.2) (2024-01-25)
 
 
