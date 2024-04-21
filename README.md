@@ -1,7 +1,9 @@
 # `<hls-video>`
 
-[![Version](https://img.shields.io/npm/v/hls-video-element?style=flat-square)](https://www.npmjs.com/package/hls-video-element) 
-[![Badge size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/hls-video-element/+esm?compression=gzip&label=gzip&style=flat-square)](https://cdn.jsdelivr.net/npm/hls-video-element/+esm)
+[![NPM Version](https://img.shields.io/npm/v/hls-video-element?style=flat-square&color=informational)](https://www.npmjs.com/package/hls-video-element) 
+[![NPM Downloads](https://img.shields.io/npm/dm/hls-video-element?style=flat-square&color=informational&label=npm)](https://www.npmjs.com/package/hls-video-element) 
+[![jsDelivr hits (npm)](https://img.shields.io/jsdelivr/npm/hm/hls-video-element?style=flat-square&color=%23FF5627)](https://www.jsdelivr.com/package/npm/hls-video-element)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/hls-video-element?style=flat-square&color=success&label=gzip)](https://bundlephobia.com/result?p=hls-video-element) 
 
 A [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) 
 for [hls.js](https://github.com/video-dev/hls.js) with an API that matches the 
@@ -14,7 +16,7 @@ for [hls.js](https://github.com/video-dev/hls.js) with an API that matches the
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@1.0/+esm"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@1.1/+esm"></script>
 <hls-video controls src="https://stream.mux.com/r4rOE02cc95tbe3I00302nlrHfT023Q3IedFJW029w018KxZA.m3u8"></hls-video>
 ```
 
@@ -36,7 +38,7 @@ Optionally, you can load the script directly from a CDN using [jsDelivr](https:/
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@1.0/+esm"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/hls-video-element@1.1/+esm"></script>
 ```
 
 This will register the custom elements with the browser so they can be used as HTML.
