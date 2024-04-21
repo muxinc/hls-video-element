@@ -1,3 +1,12 @@
+## [1.1.4](https://github.com/muxinc/hls-video-element/compare/v1.1.3...v1.1.4) (2024-04-21)
+
+
+### Bug Fixes
+
+* upgrade deps & fix readme badges ([deafb89](https://github.com/muxinc/hls-video-element/commit/deafb891b3a4bc308a97c53c1e2a10eaade20fce))
+
+
+
 ## [1.1.3](https://github.com/muxinc/hls-video-element/compare/v1.1.2...v1.1.3) (2024-02-07)
 
 
